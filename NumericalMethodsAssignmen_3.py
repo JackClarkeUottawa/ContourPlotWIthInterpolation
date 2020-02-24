@@ -35,4 +35,18 @@ def LUdecompCrout(A):
 
 
 LUdecompCrout(A)
-"""Q2."""
+"""Q4."""
+rt numpy as np
+def torad(a):
+    return(a*2*np.pi/360)
+A = np.array([[np.cos(torad(45)),0,0,-1,np.cos(torad(30)),0,0,0,0],
+              [np.sin(torad(45)),0,1,0,np.sin(torad(30)),0,0,0,0],
+              [0,1,0,0,0,-1,0,0,0],
+              [0,0,-1,0,0,0,0,0,0],
+              [0,0,0,1,0,0,0,0,-np.sin(torad(45))],
+              [0,0,0,0,0,0,1,0,np.cos(torad(45))],
+              [0,0,0,0,np.cos(torad(30)),1,0,-1,0],
+              [0,0,0,0,np.sin(30),0,1,0,0],
+              [0,0,0,0,0,0,0,1,np.cos(torad(45))]])
+B = np.array([0,-1000,0,0,500,0,0,500,0])
+print(np.matmul(np.linalg.inv(A),B))
