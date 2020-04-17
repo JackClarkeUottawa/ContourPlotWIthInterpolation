@@ -36,7 +36,7 @@ def LUdecompCrout(A):
 
 LUdecompCrout(A)
 """Q4."""
-rt numpy as np
+import numpy as np
 def torad(a):
     return(a*2*np.pi/360)
 A = np.array([[np.cos(torad(45)),0,0,-1,np.cos(torad(30)),0,0,0,0],
